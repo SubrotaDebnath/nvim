@@ -10,6 +10,12 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.cmd.colorscheme "catppuccin"
-require("vim-options")
+
+--require("options")
+--require("lua.plugins.tokyonight")
+--require("lazy").setup({
+--"plugins.tokyonight",
+--"plugins.lsp-config"
+--})
 require("lazy").setup("plugins")
+

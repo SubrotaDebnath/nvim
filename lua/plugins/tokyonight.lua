@@ -1,16 +1,10 @@
-return {}
+return {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
 
---return {
---  "folke/tokyonight.nvim",
---  lazy = false,
---  priority = 1000,
---  opts = {
---    style = "storm", 
-  --  light_style = "day",
---  },
-
---  config = function ()
---        vim.cmd[[colorscheme tokyonight]
--- end
---}
-
+	config = function()
+		vim.cmd[[colorscheme tokyonight-moon]]
+	end,
+}
