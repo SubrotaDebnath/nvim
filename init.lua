@@ -11,11 +11,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---require("options")
---require("lua.plugins.tokyonight")
---require("lazy").setup({
---"plugins.tokyonight",
---"plugins.lsp-config"
---})
 require("lazy").setup("plugins")
-
