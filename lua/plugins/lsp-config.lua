@@ -3,7 +3,7 @@ return {
     "williamboman/mason.nvim",
     lazy = false,
     config = function()
-      require("mason").setup()
+      require("mason").setup()sudo apt install gnome-shell-extension-manager
     end,
   },
   {
