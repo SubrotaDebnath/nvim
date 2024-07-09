@@ -9,22 +9,26 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
-     ensure_installed = { "lua_ls", "rust_analyzer" },
     opts = {
       auto_install = true,
     },
   },
-   {'hrsh7th/nvim-cmp'},
-  {'hrsh7th/cmp-nvim-lsp'},
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
- 
+      lspconfig.tsserver.setup({
+        capabilities = capabilities
+      })
+      lspconfig.solargraph.setup({
+        capabilities = capabilities
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities
+      })
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
