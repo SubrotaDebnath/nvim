@@ -1,10 +1,5 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.g.background = "light"
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
@@ -18,9 +13,43 @@ vim.wo.number = true
 
 local opt = vim.opt
 
-opt.number = true      -- Print line number
+-- Line number
+opt.number = true -- Print line number
 opt.relativenumber = true
+
+-- tabs & indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 opt.smartindent = true -- Insert indents automatically
+
+-- line Wrapping
+opt.wrap = false
+
+-- search setting
+opt.ignorecase = true
+opt.smartcase = true
+
+-- Cursor Line
+opt.cursorline = true
+
+-- appearance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
+
+--backspace
+opt.backspace = "indent,eol,start"
+
+--clipboard
+opt.clipboard:append("unnamedplus")
+
+--split window
+opt.splitright = true
+opt.splitbelow = true
+
+opt.iskeyword:append("-")
 opt.spelllang = { "en" }
 opt.spelloptions:append("noplainbuffer")
-opt.swapfile = flase
+opt.swapfile = false
