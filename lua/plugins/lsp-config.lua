@@ -7,6 +7,7 @@ return {
       "clangd",
       "clang-format",
       "codelldb",
+      "rust-analyzer",
     },
     config = function()
       require("mason").setup()
@@ -24,7 +25,9 @@ return {
     lazy = false,
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+      -- local on_attach = require("plugins.configs.lspconfig").on_attach
+      -- local capabilities = require("plugins.configs.lspconfig").capabilities
+      -- local util = require("lspconf fig/util")
       local lspconfig = require("lspconfig")
       lspconfig.tsserver.setup({
         capabilities = capabilities,
@@ -42,6 +45,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.gopls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
       })
 
