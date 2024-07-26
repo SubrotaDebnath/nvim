@@ -1,3 +1,13 @@
+--return {
+--  { "Mofiqul/dracula.nvim" },
+--  {
+--    "LazyVim/LazyVim",
+--    opts = {
+--      colorscheme = "dracula",
+--    },
+--  },
+--}
+
 return {
 	{
 		"catppuccin/nvim",
