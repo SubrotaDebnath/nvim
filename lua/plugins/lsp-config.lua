@@ -3,6 +3,7 @@ return {
     "williamboman/mason.nvim",
     lazy = false,
     ensure_installed = {
+      "lua_ls",
       "gopls",
       "clangd",
       "clang-format",
@@ -50,7 +51,9 @@ return {
       lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
       })
-
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
