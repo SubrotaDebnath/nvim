@@ -18,7 +18,9 @@ return {
         },
       },
       filesystem = {
-        follow_current_file = true,
+        follow_current_file = {
+          enabled =true,
+        },
         show_hidden = true, -- This line shows hidden files
       },
     })
