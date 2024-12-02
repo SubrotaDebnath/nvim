@@ -24,7 +24,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
+      "mfssenegger/nvim-dap",
     },
     opts = {
       handlers = {},

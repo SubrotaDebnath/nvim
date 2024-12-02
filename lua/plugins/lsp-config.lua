@@ -30,9 +30,6 @@ return {
       -- local capabilities = require("plugins.configs.lspconfig").capabilities
       -- local util = require("lspconf fig/util")
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
       lspconfig.clangd.setup({
         capabilities = capabilities,
       })
