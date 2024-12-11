@@ -6,9 +6,15 @@ return {
     "nvim-lua/popup.nvim",
   },
   {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
     config = function()
       require("telescope").setup({
         pickers = {
@@ -17,16 +23,26 @@ return {
           }
         },
         extensions = {
+          fzf = {},
           ["ui-select"] = {
             require("telescope.themes").get_ivy({}),
           },
         },
       })
+      require('telescope').load_extension('fzf')
       -- goto neovim config
       vim.keymap.set("n", "<leader>en",
         function()
           require('telescope.builtin').find_files {
             cwd = vim.fn.stdpath("config"),
+          }
+        end)
+
+      -- goto any install neovim plugins
+      vim.keymap.set("n", "<leader>ep",
+        function()
+          require('telescope.builtin').find_files {
+            cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
           }
         end)
 
