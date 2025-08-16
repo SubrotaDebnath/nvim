@@ -19,9 +19,12 @@ return {
       },
       filesystem = {
         follow_current_file = {
-          enabled =true,
+          enabled = true,
         },
-        show_hidden = true, -- This line shows hidden files
+        filtered_items = {
+          hide_dotfiles = false,
+        },
+        -- show_hidden = true, -- This line shows hidden files
       },
     })
     vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
